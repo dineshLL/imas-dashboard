@@ -52,16 +52,16 @@ export default [
     children: [
       home,
       // contact,
-      table,
-      button,
-      flotcharts,
-      forms,
-      grid,
-      icons,
-      morrisjscharts,
-      notification,
-      panelwells,
-      typography,
+      // table,
+      // button,
+      // flotcharts,
+      // forms,
+      // grid,
+      // icons,
+      // morrisjscharts,
+      // notification,
+      // panelwells,
+      // typography,
       // register,
       blank,
 
@@ -78,7 +78,7 @@ export default [
       return render(
         <div>
           <Header />
-          <div id="page-wrapper" className="page-wrapper">
+          <div id="page-wrapper1" className="page-wrapper">
             <App context={context}>{component}</App>
           </div>
         </div>

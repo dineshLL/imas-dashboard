@@ -23,13 +23,13 @@ const title = 'IMAS Dashboard';
 
 
 const data = [
-      { name: 'Page A', uv: 4000, pv: 2400, amt: 2400, value: 600 },
-      { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, value: 300 },
-      { name: 'Page C', uv: 2000, pv: 9800, amt: 2290, value: 500 },
-      { name: 'Page D', uv: 2780, pv: 3908, amt: 2000, value: 400 },
-      { name: 'Page E', uv: 1890, pv: 4800, amt: 2181, value: 200 },
-      { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, value: 700 },
-      { name: 'Page G', uv: 3490, pv: 4300, amt: 2100, value: 100 },
+      { name: 'logger', cpu_usage: 4000, mem_usage: 2400, net_usage: 2400, value: 600 },
+      { name: 'users', cpu_usage: 3000, mem_usage: 1398, net_usage: 2210, value: 300 },
+      { name: 'authentication', cpu_usage: 2000, mem_usage: 9800, net_usage: 2290, value: 500 },
+      { name: 'payment', cpu_usage: 2780, mem_usage: 3908, net_usage: 2000, value: 400 },
+      { name: 'items', cpu_usage: 1890, mem_usage: 4800, net_usage: 2181, value: 200 },
+      { name: 'orders', cpu_usage: 2390, mem_usage: 3800, net_usage: 2500, value: 700 },
+      { name: 'kafka', cpu_usage: 3490, mem_usage: 4300, net_usage: 2100, value: 100 },
 ];
 
 function Home(props, context) {
@@ -38,7 +38,7 @@ function Home(props, context) {
     <div>
       <div className="row">
         <div className="col-lg-12">
-          <PageHeader>IMAS Dashboard</PageHeader>
+          {/* <PageHeader>IMAS Dashboard</PageHeader> */}
         </div>
       </div>
 
@@ -49,7 +49,6 @@ function Home(props, context) {
             icon="fa fa-comments fa-5x"
             count="26"
             headerText="Latent Service"
-            footerText="View Details"
             linkTo="/"
           />
         </div>
@@ -59,7 +58,6 @@ function Home(props, context) {
             icon="fa fa-tasks fa-5x"
             count="12"
             headerText="Resp Service"
-            footerText="View Details"
             linkTo="/"
           />
         </div>
@@ -69,7 +67,6 @@ function Home(props, context) {
             icon="fa fa-shopping-cart fa-5x"
             count="124"
             headerText="No of Calls"
-            footerText="View Details"
             linkTo="/"
           />
         </div>
@@ -79,7 +76,6 @@ function Home(props, context) {
             icon="fa fa-support fa-5x"
             count="13"
             headerText="Docker Usage"
-            footerText="View Details"
             linkTo="/"
           />
         </div>
@@ -90,8 +86,8 @@ function Home(props, context) {
 
           <Panel
             header={<span>
-              <i className="fa fa-bar-chart-o fa-fw" /> Area Chart Example
-              <div className="pull-right">
+              <i className="fa fa-bar-chart-o fa-fw" /> Response Chart
+              {/* <div className="pull-right">
                 <DropdownButton title="Dropdown" bsSize="xs" pullRight id="dropdownButton1" >
                   <MenuItem eventKey="1">Action</MenuItem>
                   <MenuItem eventKey="2">Another action</MenuItem>
@@ -99,7 +95,7 @@ function Home(props, context) {
                   <MenuItem divider />
                   <MenuItem eventKey="4">Separated link</MenuItem>
                 </DropdownButton>
-              </div>
+              </div> */}
             </span>}
           >
             <div>
@@ -109,9 +105,9 @@ function Home(props, context) {
                   <YAxis />
                   <CartesianGrid stroke="#ccc" />
                   <Tooltip />
-                  <Area type="monotone" dataKey="uv" stackId="1" stroke="#8884d8" fill="#8884d8" />
-                  <Area type="monotone" dataKey="pv" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
-                  <Area type="monotone" dataKey="amt" stackId="1" stroke="#ffc658" fill="#ffc658" />
+                  <Area type="monotone" dataKey="cpu_usage" stackId="1" stroke="#8884d8" fill="#8884d8" />
+                  <Area type="monotone" dataKey="mem_usage" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
+                  <Area type="monotone" dataKey="net_usage" stackId="1" stroke="#ffc658" fill="#ffc658" />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -120,8 +116,8 @@ function Home(props, context) {
 
           <Panel
             header={<span>
-              <i className="fa fa-bar-chart-o fa-fw" /> Bar Chart Example
-              <div className="pull-right">
+              <i className="fa fa-bar-chart-o fa-fw" /> Response bar Chart
+              {/* <div className="pull-right">
                 <DropdownButton title="Dropdown" bsSize="xs" pullRight id="dropdownButton2">
                   <MenuItem eventKey="1">Action</MenuItem>
                   <MenuItem eventKey="2">Another action</MenuItem>
@@ -129,7 +125,7 @@ function Home(props, context) {
                   <MenuItem divider />
                   <MenuItem eventKey="4">Separated link</MenuItem>
                 </DropdownButton>
-              </div>
+              </div> */}
             </span>}
           >
             <div>
@@ -139,15 +135,15 @@ function Home(props, context) {
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
-                  <Bar dataKey="pv" stackId="1" fill="#8884d8" />
-                  <Bar dataKey="uv" stackId="1" fill="#82ca9d" />
-                  <Bar type="monotone" dataKey="amt" fill="#ffc658" />
+                  <Bar dataKey="mem_usage" stackId="1" fill="#8884d8" />
+                  <Bar dataKey="cpu_usage" stackId="1" fill="#82ca9d" />
+                  <Bar type="monotone" dataKey="net_usage" fill="#ffc658" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
           </Panel>
 
-          <Panel
+          {/* <Panel
             header={<span>
               <i className="fa fa-clock-o fa-fw" /> Responsive Timeline
             </span>}
@@ -212,7 +208,7 @@ function Home(props, context) {
                 </li>
               </ul>
             </div>
-          </Panel>
+          </Panel> */}
 
         </div>
 
@@ -220,53 +216,53 @@ function Home(props, context) {
 
           <Panel
             header={<span>
-              <i className="fa fa-bell fa-fw" /> Notifications Panel
+              <i className="fa fa-bell fa-fw" /> Images List
             </span>}
           >
             <ListGroup>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-comment fa-fw" /> New Comment
+                <i className="fa fa-comment fa-fw" /> ubuntu:latest
                 <span className="pull-right text-muted small"><em>4 minutes ago</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-twitter fa-fw" /> 3 New Followers
+                <i className="fa fa-twitter fa-fw" /> centos:latest
                 <span className="pull-right text-muted small"><em>12 minutes ago</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-envelope fa-fw" /> Message Sent
+                <i className="fa fa-envelope fa-fw" /> tomcat:latest
                 <span className="pull-right text-muted small"><em>27 minutes ago</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-tasks fa-fw" /> New Task
+                <i className="fa fa-tasks fa-fw" /> python:latest
                 <span className="pull-right text-muted small"><em>43 minutes ago</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-upload fa-fw" /> Server Rebooted
+                <i className="fa fa-upload fa-fw" /> mariadb:latest
                 <span className="pull-right text-muted small"><em>11:32 AM</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-bolt fa-fw" /> Server Crashed!
+                <i className="fa fa-bolt fa-fw" /> imas-router:latest
                 <span className="pull-right text-muted small"><em>11:13 AM</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-warning fa-fw" /> Server Not Responding
+                <i className="fa fa-warning fa-fw" /> imas-apigateway:latest
                 <span className="pull-right text-muted small"><em>10:57 AM</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-shopping-cart fa-fw" /> New Order Placed
+                <i className="fa fa-shopping-cart fa-fw" /> imas-itemList:latest
                 <span className="pull-right text-muted small"><em>9:49 AM</em></span>
               </ListGroupItem>
               <ListGroupItem href="" onClick={(e) => { e.preventDefault(); }}>
-                <i className="fa fa-money fa-fw" /> Payment Received
+                <i className="fa fa-money fa-fw" /> imas-auth:latest
                 <span className="pull-right text-muted small"><em>Yesterday</em></span>
               </ListGroupItem>
             </ListGroup>
-            <Button block>View All Alerts</Button>
+            {/* <Button block>View All Alerts</Button> */}
           </Panel>
 
           <Panel
             header={<span>
-              <i className="fa fa-bar-chart-o fa-fw" /> Donut Chart Example
+              <i className="fa fa-bar-chart-o fa-fw" /> Donut Chart
             </span>}
           >
             <div>

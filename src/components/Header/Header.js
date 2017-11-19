@@ -148,7 +148,7 @@ function Header() {
             </NavDropdown>
 
           </ul> */}
-          <Sidebar />
+          {/* <Sidebar /> */}
     </Navbar>
     </div>
   );

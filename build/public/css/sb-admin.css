@@ -12,18 +12,18 @@ body {
     width: 100%;
 }
 
-#page-wrapper {
-    padding: 20px;
+#page-wrapper1 {
+    padding: 30px;
     min-height: 568px;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 @media(min-width:768px) {
-    #page-wrapper {
+    #page-wrapper1 {
         position: inherit;
-        margin: 0 0 0 250px;
-        padding: 0 30px;
-        border-left: 1px solid #e7e7e7;
+        /* margin: 0 0 0 250px; */
+        /* padding: 0 30px; */
+        /* border-left: 1px solid #f32a2a; */
     }
 }
 

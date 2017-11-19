@@ -1022,7 +1022,16 @@ module.exports =
     // keep in mind, routes are evaluated in order
     children: [_home2.default,
     // contact,
-    _tables2.default, _buttons2.default, _flotCharts2.default, _forms2.default, _grid2.default, _icons2.default, _morrisjsCharts2.default, _notification2.default, _panelWells2.default, _typography2.default,
+    // table,
+    // button,
+    // flotcharts,
+    // forms,
+    // grid,
+    // icons,
+    // morrisjscharts,
+    // notification,
+    // panelwells,
+    // typography,
     // register,
     _blank2.default,
   
@@ -1062,7 +1071,7 @@ module.exports =
                   _react2.default.createElement(_Header2.default, null),
                   _react2.default.createElement(
                     'div',
-                    { id: 'page-wrapper', className: 'page-wrapper' },
+                    { id: 'page-wrapper1', className: 'page-wrapper' },
                     _react2.default.createElement(
                       _App2.default,
                       { context: context },
@@ -1416,8 +1425,7 @@ module.exports =
               _react2.default.createElement('span', { className: 'icon-bar' })
             )
           )
-        ),
-        _react2.default.createElement(_Sidebar2.default, null)
+        )
       )
     );
   }
@@ -1765,7 +1773,7 @@ module.exports =
   
   var title = 'IMAS Dashboard';
   
-  var data = [{ name: 'Page A', uv: 4000, pv: 2400, amt: 2400, value: 600 }, { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, value: 300 }, { name: 'Page C', uv: 2000, pv: 9800, amt: 2290, value: 500 }, { name: 'Page D', uv: 2780, pv: 3908, amt: 2000, value: 400 }, { name: 'Page E', uv: 1890, pv: 4800, amt: 2181, value: 200 }, { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, value: 700 }, { name: 'Page G', uv: 3490, pv: 4300, amt: 2100, value: 100 }];
+  var data = [{ name: 'logger', cpu_usage: 4000, mem_usage: 2400, net_usage: 2400, value: 600 }, { name: 'users', cpu_usage: 3000, mem_usage: 1398, net_usage: 2210, value: 300 }, { name: 'authentication', cpu_usage: 2000, mem_usage: 9800, net_usage: 2290, value: 500 }, { name: 'payment', cpu_usage: 2780, mem_usage: 3908, net_usage: 2000, value: 400 }, { name: 'items', cpu_usage: 1890, mem_usage: 4800, net_usage: 2181, value: 200 }, { name: 'orders', cpu_usage: 2390, mem_usage: 3800, net_usage: 2500, value: 700 }, { name: 'kafka', cpu_usage: 3490, mem_usage: 4300, net_usage: 2100, value: 100 }];
   
   function Home(props, context) {
     context.setTitle(title);
@@ -1775,15 +1783,7 @@ module.exports =
       _react2.default.createElement(
         'div',
         { className: 'row' },
-        _react2.default.createElement(
-          'div',
-          { className: 'col-lg-12' },
-          _react2.default.createElement(
-            _reactBootstrap.PageHeader,
-            null,
-            'IMAS Dashboard'
-          )
-        )
+        _react2.default.createElement('div', { className: 'col-lg-12' })
       ),
       _react2.default.createElement(
         'div',
@@ -1796,7 +1796,6 @@ module.exports =
             icon: 'fa fa-comments fa-5x',
             count: '26',
             headerText: 'Latent Service',
-            footerText: 'View Details',
             linkTo: '/'
           })
         ),
@@ -1808,7 +1807,6 @@ module.exports =
             icon: 'fa fa-tasks fa-5x',
             count: '12',
             headerText: 'Resp Service',
-            footerText: 'View Details',
             linkTo: '/'
           })
         ),
@@ -1820,7 +1818,6 @@ module.exports =
             icon: 'fa fa-shopping-cart fa-5x',
             count: '124',
             headerText: 'No of Calls',
-            footerText: 'View Details',
             linkTo: '/'
           })
         ),
@@ -1832,7 +1829,6 @@ module.exports =
             icon: 'fa fa-support fa-5x',
             count: '13',
             headerText: 'Docker Usage',
-            footerText: 'View Details',
             linkTo: '/'
           })
         )
@@ -1850,36 +1846,7 @@ module.exports =
                 'span',
                 null,
                 _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-                ' Area Chart Example',
-                _react2.default.createElement(
-                  'div',
-                  { className: 'pull-right' },
-                  _react2.default.createElement(
-                    _reactBootstrap.DropdownButton,
-                    { title: 'Dropdown', bsSize: 'xs', pullRight: true, id: 'dropdownButton1' },
-                    _react2.default.createElement(
-                      _reactBootstrap.MenuItem,
-                      { eventKey: '1' },
-                      'Action'
-                    ),
-                    _react2.default.createElement(
-                      _reactBootstrap.MenuItem,
-                      { eventKey: '2' },
-                      'Another action'
-                    ),
-                    _react2.default.createElement(
-                      _reactBootstrap.MenuItem,
-                      { eventKey: '3' },
-                      'Something else here'
-                    ),
-                    _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-                    _react2.default.createElement(
-                      _reactBootstrap.MenuItem,
-                      { eventKey: '4' },
-                      'Separated link'
-                    )
-                  )
-                )
+                ' Response Chart'
               )
             },
             _react2.default.createElement(
@@ -1895,9 +1862,9 @@ module.exports =
                   _react2.default.createElement(_recharts.YAxis, null),
                   _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
                   _react2.default.createElement(_recharts.Tooltip, null),
-                  _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'uv', stackId: '1', stroke: '#8884d8', fill: '#8884d8' }),
-                  _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'pv', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d' }),
-                  _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'amt', stackId: '1', stroke: '#ffc658', fill: '#ffc658' })
+                  _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'cpu_usage', stackId: '1', stroke: '#8884d8', fill: '#8884d8' }),
+                  _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'mem_usage', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d' }),
+                  _react2.default.createElement(_recharts.Area, { type: 'monotone', dataKey: 'net_usage', stackId: '1', stroke: '#ffc658', fill: '#ffc658' })
                 )
               )
             )
@@ -1909,36 +1876,7 @@ module.exports =
                 'span',
                 null,
                 _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-                ' Bar Chart Example',
-                _react2.default.createElement(
-                  'div',
-                  { className: 'pull-right' },
-                  _react2.default.createElement(
-                    _reactBootstrap.DropdownButton,
-                    { title: 'Dropdown', bsSize: 'xs', pullRight: true, id: 'dropdownButton2' },
-                    _react2.default.createElement(
-                      _reactBootstrap.MenuItem,
-                      { eventKey: '1' },
-                      'Action'
-                    ),
-                    _react2.default.createElement(
-                      _reactBootstrap.MenuItem,
-                      { eventKey: '2' },
-                      'Another action'
-                    ),
-                    _react2.default.createElement(
-                      _reactBootstrap.MenuItem,
-                      { eventKey: '3' },
-                      'Something else here'
-                    ),
-                    _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-                    _react2.default.createElement(
-                      _reactBootstrap.MenuItem,
-                      { eventKey: '4' },
-                      'Separated link'
-                    )
-                  )
-                )
+                ' Response bar Chart'
               )
             },
             _react2.default.createElement(
@@ -1954,136 +1892,9 @@ module.exports =
                   _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
                   _react2.default.createElement(_recharts.YAxis, null),
                   _react2.default.createElement(_recharts.Tooltip, null),
-                  _react2.default.createElement(_recharts.Bar, { dataKey: 'pv', stackId: '1', fill: '#8884d8' }),
-                  _react2.default.createElement(_recharts.Bar, { dataKey: 'uv', stackId: '1', fill: '#82ca9d' }),
-                  _react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658' })
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Panel,
-            {
-              header: _react2.default.createElement(
-                'span',
-                null,
-                _react2.default.createElement('i', { className: 'fa fa-clock-o fa-fw' }),
-                ' Responsive Timeline'
-              )
-            },
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'ul',
-                { className: 'timeline' },
-                _react2.default.createElement(
-                  'li',
-                  null,
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'timeline-badge' },
-                    _react2.default.createElement('i', { className: 'fa fa-check' })
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'timeline-panel' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'timeline-heading' },
-                      _react2.default.createElement(
-                        'h4',
-                        { className: 'timeline-title' },
-                        'Lorem ipsum dolor'
-                      ),
-                      _react2.default.createElement(
-                        'p',
-                        null,
-                        _react2.default.createElement(
-                          'small',
-                          { className: 'text-muted' },
-                          _react2.default.createElement('i', { className: 'fa fa-clock-o' }),
-                          ' 11 hours ago via Twitter'
-                        )
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'timeline-body' },
-                      _react2.default.createElement(
-                        'p',
-                        null,
-                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.'
-                      )
-                    )
-                  )
-                ),
-                _react2.default.createElement(
-                  'li',
-                  { className: 'timeline-inverted' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'timeline-badge warning' },
-                    _react2.default.createElement('i', { className: 'fa fa-credit-card' })
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'timeline-panel' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'timeline-heading' },
-                      _react2.default.createElement(
-                        'h4',
-                        { className: 'timeline-title' },
-                        'Lorem ipsum dolor'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'timeline-body' },
-                      _react2.default.createElement(
-                        'p',
-                        null,
-                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorem quibusdam, tenetur commodi provident cumque magni voluptatem libero, quis rerum. Fugiat esse debitis optio, tempore. Animi officiis alias, officia repellendus.'
-                      ),
-                      _react2.default.createElement(
-                        'p',
-                        null,
-                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium maiores odit qui est tempora eos, nostrum provident explicabo dignissimos debitis vel! Adipisci eius voluptates, ad aut recusandae minus eaque facere.'
-                      )
-                    )
-                  )
-                ),
-                _react2.default.createElement(
-                  'li',
-                  null,
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'timeline-badge danger' },
-                    _react2.default.createElement('i', { className: 'fa fa-bomb' })
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'timeline-panel' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'timeline-heading' },
-                      _react2.default.createElement(
-                        'h4',
-                        { className: 'timeline-title' },
-                        'Lorem ipsum dolor'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'timeline-body' },
-                      _react2.default.createElement(
-                        'p',
-                        null,
-                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam facilis enim eaque, tenetur nam id qui vel velit similique nihil iure molestias aliquam, voluptatem totam quaerat, magni commodi quisquam.'
-                      )
-                    )
-                  )
+                  _react2.default.createElement(_recharts.Bar, { dataKey: 'mem_usage', stackId: '1', fill: '#8884d8' }),
+                  _react2.default.createElement(_recharts.Bar, { dataKey: 'cpu_usage', stackId: '1', fill: '#82ca9d' }),
+                  _react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'net_usage', fill: '#ffc658' })
                 )
               )
             )
@@ -2099,7 +1910,7 @@ module.exports =
                 'span',
                 null,
                 _react2.default.createElement('i', { className: 'fa fa-bell fa-fw' }),
-                ' Notifications Panel'
+                ' Images List'
               )
             },
             _react2.default.createElement(
@@ -2111,7 +1922,7 @@ module.exports =
                     e.preventDefault();
                   } },
                 _react2.default.createElement('i', { className: 'fa fa-comment fa-fw' }),
-                ' New Comment',
+                ' ubuntu:latest',
                 _react2.default.createElement(
                   'span',
                   { className: 'pull-right text-muted small' },
@@ -2128,7 +1939,7 @@ module.exports =
                     e.preventDefault();
                   } },
                 _react2.default.createElement('i', { className: 'fa fa-twitter fa-fw' }),
-                ' 3 New Followers',
+                ' centos:latest',
                 _react2.default.createElement(
                   'span',
                   { className: 'pull-right text-muted small' },
@@ -2145,7 +1956,7 @@ module.exports =
                     e.preventDefault();
                   } },
                 _react2.default.createElement('i', { className: 'fa fa-envelope fa-fw' }),
-                ' Message Sent',
+                ' tomcat:latest',
                 _react2.default.createElement(
                   'span',
                   { className: 'pull-right text-muted small' },
@@ -2162,7 +1973,7 @@ module.exports =
                     e.preventDefault();
                   } },
                 _react2.default.createElement('i', { className: 'fa fa-tasks fa-fw' }),
-                ' New Task',
+                ' python:latest',
                 _react2.default.createElement(
                   'span',
                   { className: 'pull-right text-muted small' },
@@ -2179,7 +1990,7 @@ module.exports =
                     e.preventDefault();
                   } },
                 _react2.default.createElement('i', { className: 'fa fa-upload fa-fw' }),
-                ' Server Rebooted',
+                ' mariadb:latest',
                 _react2.default.createElement(
                   'span',
                   { className: 'pull-right text-muted small' },
@@ -2196,7 +2007,7 @@ module.exports =
                     e.preventDefault();
                   } },
                 _react2.default.createElement('i', { className: 'fa fa-bolt fa-fw' }),
-                ' Server Crashed!',
+                ' imas-router:latest',
                 _react2.default.createElement(
                   'span',
                   { className: 'pull-right text-muted small' },
@@ -2213,7 +2024,7 @@ module.exports =
                     e.preventDefault();
                   } },
                 _react2.default.createElement('i', { className: 'fa fa-warning fa-fw' }),
-                ' Server Not Responding',
+                ' imas-apigateway:latest',
                 _react2.default.createElement(
                   'span',
                   { className: 'pull-right text-muted small' },
@@ -2230,7 +2041,7 @@ module.exports =
                     e.preventDefault();
                   } },
                 _react2.default.createElement('i', { className: 'fa fa-shopping-cart fa-fw' }),
-                ' New Order Placed',
+                ' imas-itemList:latest',
                 _react2.default.createElement(
                   'span',
                   { className: 'pull-right text-muted small' },
@@ -2247,7 +2058,7 @@ module.exports =
                     e.preventDefault();
                   } },
                 _react2.default.createElement('i', { className: 'fa fa-money fa-fw' }),
-                ' Payment Received',
+                ' imas-auth:latest',
                 _react2.default.createElement(
                   'span',
                   { className: 'pull-right text-muted small' },
@@ -2258,11 +2069,6 @@ module.exports =
                   )
                 )
               )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Button,
-              { block: true },
-              'View All Alerts'
             )
           ),
           _react2.default.createElement(
@@ -2272,7 +2078,7 @@ module.exports =
                 'span',
                 null,
                 _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-                ' Donut Chart Example'
+                ' Donut Chart'
               )
             },
             _react2.default.createElement(
