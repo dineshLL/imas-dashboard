@@ -39,7 +39,7 @@ function Header() {
                 </button>
             </span>
           </Brand>
-          <ul className="nav navbar-top-links navbar-right">
+          {/* <ul className="nav navbar-top-links navbar-right">
 
               <NavDropdown bsClass="dropdown" title={<span><i className="fa fa-envelope fa-fw"></i></span>} id="navDropdown1">
                 <MenuItem style={ {width: 300} } eventKey="1">
@@ -147,7 +147,7 @@ function Header() {
                   </MenuItem>
             </NavDropdown>
 
-          </ul>
+          </ul> */}
           <Sidebar />
     </Navbar>
     </div>

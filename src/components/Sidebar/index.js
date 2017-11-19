@@ -20,7 +20,7 @@ class Sidebar extends Component {
       <div className="navbar-default sidebar" style={{ marginLeft: '-20px' }} role="navigation">
         <div className="sidebar-nav navbar-collapse collapse">
           <ul className="nav in" id="side-menu">
-            <li className="sidebar-search">
+            {/* <li className="sidebar-search">
               <div className="input-group custom-search-form">
                 <input type="text" className="form-control" placeholder="Search..." />
                 <span className="input-group-btn">
@@ -29,7 +29,7 @@ class Sidebar extends Component {
                   </button>
                 </span>
               </div>
-            </li>
+            </li> */}
 
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/'); }} >
@@ -74,7 +74,7 @@ class Sidebar extends Component {
             </li>
 
 
-            <li>
+            {/* <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/table'); }} >
                 <i className="fa fa-table fa-fw" /> &nbsp;Tables
               </a>
@@ -241,7 +241,7 @@ class Sidebar extends Component {
 
             <li>
               <a href="http://www.strapui.com/">Premium React Themes</a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
