@@ -1773,7 +1773,7 @@ module.exports =
   
   var title = 'IMAS Dashboard';
   
-  var data = [{ name: 'logger', cpu_usage: 4000, mem_usage: 2400, net_usage: 2400, value: 600 }, { name: 'users', cpu_usage: 3000, mem_usage: 1398, net_usage: 2210, value: 300 }, { name: 'authentication', cpu_usage: 2000, mem_usage: 9800, net_usage: 2290, value: 500 }, { name: 'payment', cpu_usage: 2780, mem_usage: 3908, net_usage: 2000, value: 400 }, { name: 'items', cpu_usage: 1890, mem_usage: 4800, net_usage: 2181, value: 200 }, { name: 'orders', cpu_usage: 2390, mem_usage: 3800, net_usage: 2500, value: 700 }, { name: 'kafka', cpu_usage: 3490, mem_usage: 4300, net_usage: 2100, value: 100 }];
+  var data = [{ name: 'log', cpu_usage: 4000, mem_usage: 2400, net_usage: 2400, value: 600 }, { name: 'users', cpu_usage: 3000, mem_usage: 1398, net_usage: 2210, value: 300 }, { name: 'orders', cpu_usage: 2000, mem_usage: 9800, net_usage: 2290, value: 500 }, { name: 'payment', cpu_usage: 2780, mem_usage: 3908, net_usage: 2000, value: 400 }, { name: 'items', cpu_usage: 1890, mem_usage: 4800, net_usage: 2181, value: 200 }, { name: 'auth', cpu_usage: 2390, mem_usage: 3800, net_usage: 2500, value: 700 }, { name: 'kafka', cpu_usage: 3490, mem_usage: 4300, net_usage: 2100, value: 100 }];
   
   function Home(props, context) {
     context.setTitle(title);
@@ -1793,8 +1793,8 @@ module.exports =
           { className: 'col-lg-3 col-md-6' },
           _react2.default.createElement(_Widget2.default, {
             style: 'panel-primary',
-            icon: 'fa fa-comments fa-5x',
-            count: '26',
+            icon: 'fa fa-area-chart fa-5x',
+            count: 'auth',
             headerText: 'Latent Service',
             linkTo: '/'
           })
@@ -1804,8 +1804,8 @@ module.exports =
           { className: 'col-lg-3 col-md-6' },
           _react2.default.createElement(_Widget2.default, {
             style: 'panel-green',
-            icon: 'fa fa-tasks fa-5x',
-            count: '12',
+            icon: 'fa fa-bolt fa-5x',
+            count: 'items',
             headerText: 'Resp Service',
             linkTo: '/'
           })
@@ -1815,7 +1815,7 @@ module.exports =
           { className: 'col-lg-3 col-md-6' },
           _react2.default.createElement(_Widget2.default, {
             style: 'panel-yellow',
-            icon: 'fa fa-shopping-cart fa-5x',
+            icon: 'fa fa-cloud fa-5x',
             count: '124',
             headerText: 'No of Calls',
             linkTo: '/'
@@ -1827,7 +1827,7 @@ module.exports =
           _react2.default.createElement(_Widget2.default, {
             style: 'panel-red',
             icon: 'fa fa-support fa-5x',
-            count: '13',
+            count: '27%',
             headerText: 'Docker Usage',
             linkTo: '/'
           })
