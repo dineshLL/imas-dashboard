@@ -7,7 +7,7 @@ import {
   DropdownButton,
   Panel, PageHeader, ListGroup, ListGroupItem, Button,
 } from 'react-bootstrap';
-
+import axios from 'axios';
 
 import s from './Home.css';
 import StatWidget from '../../components/Widget';
@@ -34,6 +34,15 @@ const data = [
 
 function Home(props, context) {
   context.setTitle(title);
+  
+  axios.get('http://192.168.137.1:12112/imas-router/meta/a/min')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
   return (
     <div>
       <div className="row">

@@ -1755,6 +1755,10 @@ module.exports =
   
   var _reactBootstrap = __webpack_require__(38);
   
+  var _axios = __webpack_require__(189);
+  
+  var _axios2 = _interopRequireDefault(_axios);
+  
   var _Home = __webpack_require__(50);
   
   var _Home2 = _interopRequireDefault(_Home);
@@ -1777,6 +1781,13 @@ module.exports =
   
   function Home(props, context) {
     context.setTitle(title);
+  
+    _axios2.default.get('http://192.168.137.1:12112/imas-router/meta/a/min').then(function (response) {
+      console.log(response);
+    }).catch(function (error) {
+      console.log(error);
+    });
+  
     return _react2.default.createElement(
       'div',
       null,
@@ -29214,6 +29225,12 @@ module.exports =
 /***/ (function(module, exports) {
 
   module.exports = require("./assets");
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports) {
+
+  module.exports = require("axios");
 
 /***/ })
 /******/ ]);
